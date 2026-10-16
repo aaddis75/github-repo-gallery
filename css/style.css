@@ -156,6 +156,12 @@ header,
   color: #fff;
 }
 
+/* About section */
+.about {
+  text-align: center;
+  padding: 0 2rem 2rem 2rem;
+}
+
 /* Avatar */
 .about img {
   width: 50%;
@@ -188,6 +194,7 @@ header,
 .search input {
   font: inherit;
   flex-grow: 1;
+  min-width: 0;
   border: 2px solid #483978;
   padding: 0.75rem 1rem;
 }
@@ -221,6 +228,7 @@ header,
 
 .repo:hover h3 {
   color: #fff;
+  overflow-wrap: break-word;
 }
 
 /* Repo details */
@@ -241,6 +249,7 @@ header,
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   border-radius: 1.5rem;
+  text-align: center;
 }
 
 /*View Repo button hover + focus*/
@@ -270,72 +279,53 @@ header,
   color: #fff;
 }
 
-/* About section */
-.about {
-  text-align: center;
-  padding: 0 2rem 2rem 2rem;
-  gap: 2rem;
-}
-
 /* Tablet: 700px and up */
 @media only screen and (min-width: 43.75em) {
-
   .about {
     display: flex;
     gap: 2rem;
     align-items: center;
   }
 
- .about-info {
+  .about-info {
     text-align: left;
   }
 
   .about img {
-     width: 12.5rem;
+    width: 12.5rem;
   }
 
+  .repo-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+  }
 
-.repo-list {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 2rem;
-}
+  .repo {
+    width: calc(50% - 1rem);
+  }
+  .search {
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
 
-.repo {
-  width: calc(50% - 1rem);
-
-}
-
-.search { 
-  justify-content: center;
-}
-
-.search input {
-  flex-grow: 0;
-  width: 18.75rem;
-}
-
-.search {
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
+  .search input {
+    flex-grow: 0;
+    width: 18.75rem;
+  }
 }
 /* Desktop: 1200px and up */
 @media only screen and (min-width: 75em) {
+  .repo {
+    width: calc(33.333% - 1.333rem);
+  }
 
-
-.repo {
-  width: calc(33.333% - 1.333rem);
-}
-
-.about {
+  .about {
     justify-content: center;
   }
 
   .about-info {
     max-width: 33.75rem;
-  
   }
 }
 /* ==========================================================================
