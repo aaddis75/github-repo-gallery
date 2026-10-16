@@ -83,7 +83,261 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+/* Header */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  border-radius: 1.25rem 1.25rem 0 0;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* GitHub cat icon */
+header i {
+  color: #f86d58;
+  font-size: 3rem;
+}
+
+body {
+  background-color: #fbf9de;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.125rem;
+}
+
+/* Badge */
+.badge {
+  height: 5rem;
+  width: 3.125rem;
+  background-color: grey;
+  border-radius: 0.625rem;
+  margin: 0.625rem auto -2.1875rem auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 98;
+}
+
+.circle {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #483978;
+  border-radius: 100%;
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+}
+
+.content-wrapper {
+  background-color: #fff;
+  margin: 0 5%;
+}
+
+/* Purple top of the card */
+header,
+.about {
+  background-color: #483978;
+  color: #fff;
+}
+
+/* Avatar */
+.about img {
+  width: 50%;
+  border-radius: 50%;
+}
+
+/* About stats + dividers */
+.about p {
+  border-bottom: 1px solid #9b8dc9;
+  padding-bottom: 1rem;
+}
+
+/* Gallery */
+.gallery {
+  padding: 3rem 0.75rem;
+}
+
+/* Gallery: search bar */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search i {
+  color: #483978;
+  font-size: 1.5rem;
+}
+
+.search input {
+  font: inherit;
+  flex-grow: 1;
+  border: 2px solid #483978;
+  padding: 0.75rem 1rem;
+}
+
+.search input:focus {
+  border-width: 4px;
+  outline: none;
+}
+
+/* Repo list */
+.repo-list {
+  list-style: none;
+  padding: 0 2.5rem;
+}
+
+/* Repo cards */
+.repo {
+  border: 1px solid #f7614a;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.repo h3 {
+  color: #f7614a;
+}
+
+/* Repo card hover */
+.repo:hover {
+  background-color: #f7614a;
+}
+
+.repo:hover h3 {
+  color: #fff;
+}
+
+/* Repo details */
+.repo-details {
+  padding: 0 2rem;
+}
+
+.repo-details h2 {
+  color: #f7614a;
+  font-size: 1.25rem;
+}
+
+/* View Repo button */
+.visit {
+  display: inline-block;
+  background-color: #483978;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.5rem;
+}
+
+/*View Repo button hover + focus*/
+.visit:hover,
+.visit:focus-visible {
+  background-color: #2f2550;
+}
+
+/* Back button */
+.back-button {
+  font: inherit;
+  background-color: #eee;
+  border: 2px solid gray;
+  border-radius: 1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.back-container {
+  padding: 1rem 2rem 3rem 2rem;
+}
+
+/*Back Button hover + focus*/
+.back-button:hover,
+.back-button:focus-visible {
+  background: #767676;
+  border-color: #ccc;
+  color: #fff;
+}
+
+/* About section */
+.about {
+  text-align: center;
+  padding: 0 2rem 2rem 2rem;
+  gap: 2rem;
+}
+
+/* Tablet: 700px and up */
+@media only screen and (min-width: 43.75em) {
+
+  .about {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+ .about-info {
+    text-align: left;
+  }
+
+  .about img {
+     width: 12.5rem;
+  }
+
+
+.repo-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+}
+
+.repo {
+  width: calc(50% - 1rem);
+
+}
+
+.search { 
+  justify-content: center;
+}
+
+.search input {
+  flex-grow: 0;
+  width: 18.75rem;
+}
+
+.search {
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+}
+/* Desktop: 1200px and up */
+@media only screen and (min-width: 75em) {
+
+
+.repo {
+  width: calc(33.333% - 1.333rem);
+}
+
+.about {
+    justify-content: center;
+  }
+
+  .about-info {
+    max-width: 33.75rem;
+  
+  }
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -167,10 +421,6 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
 @media print,
   (-webkit-min-device-pixel-ratio: 1.25),
   (min-resolution: 1.25dppx),
@@ -244,4 +494,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
